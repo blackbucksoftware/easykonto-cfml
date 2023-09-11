@@ -1,5 +1,5 @@
 # easykonto-cfml
-easykonto-cfml is a CFML library for checking IBANs with the EasyKonto-API. [EasyKonto](https://www.easykonto.de/) is a service to check IBANs and BICs.
+easykonto-cfml is a CFML library for checking IBANs with the EasyKonto-API. [EasyKonto](https://www.easykonto.de/) is a commercial 3rd-party-service to check IBANs and BICs.
 
 
 ## Installation
@@ -11,16 +11,18 @@ $ box install easykontocfml
 
 Alternatively the git repository can be cloned.
 
+
 ### Standalone Usage
 
 Once the library has been installed, the core `easykonto` component can be instantiated directly:
 
 ```cfc
-mollie = new path.to.easykontocfml.easykonto(
+easykonto = new path.to.easykontocfml.easykonto(
     key = 'YOUR_EASYKONTO_API_KEY',
     secret = 'YOUR_EASYKONTO_API_SECRET'
 );
 ```
+
 
 ### ColdBox Module
 
@@ -42,6 +44,7 @@ You can subsequently reference the library via the injection DSL: `easykonto@eas
 property name="easykonto" inject="easykonto@easykontocfml";
 ```
 
+
 ## Configuration
 
 EasyKonto requires two params, `key` and `secret`. Both are provided in your EasyKonto backend. 
@@ -60,6 +63,7 @@ The `baseUrl` parameter is optional and defaults to `https://api.easykonto.de/v5
 <cfdump var="#x#" />
 ```
 
+
 ## Responses
 
 EasyKonto's REST-API returns JSON objects in response to all requests. **easykonto-cfml** deserializes this response into a CFML struct and makes it available under the `data` key.
@@ -73,6 +77,7 @@ Responses to API calls are all returned as structs in the following format:
 }
 ```
 
+
 ## Methods Available
 
 **easykonto-cfml** covers all methods of the EasyKonto API v5:
@@ -82,9 +87,12 @@ Responses to API calls are all returned as structs in the following format:
 * `findGermanBank( blz="37040044" )` - Checks German bank code (BLZ)
 * `findBank( bic="COBADEFFXXX" )` - Checks BIC code
 
+
 ## Links
 [EasyKonto website](https://www.easykonto.de/)
+
 [EasyKonto API docs](https://easykonto.readme.io/reference/general)
+
 
 ## Disclaimer
 Blackbuck Software is not affiliated with EasyKonto.
