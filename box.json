@@ -1,0 +1,55 @@
+{
+    "name":"easyKonto CFML",
+    "version":"0.1.0",
+    "author":"Blackbuck Software GmbH",
+    "location":"blackbucksoftware/easykonto-cfml#v0.1.0",
+    "homepage":"https://github.com/blackbucksoftware/easykonto-cfml",
+    "documentation":"",
+    "repository":{
+        "type":"git",
+        "URL":"https://github.com/blackbucksoftware/easykonto-cfml"
+    },
+    "bugs":"https://github.com/blackbucksoftware/easykonto-cfml/issues",
+    "slug":"easykontocfml",
+    "shortDescription":"easyKonto CFML is a CFML library for checking IBANs via the easyKonto API.",
+    "description":"",
+    "instructions":"",
+    "changelog":"",
+    "type":"modules",
+    "keywords":[
+        "easykonto",
+        "api"
+    ],
+    "private":false,
+    "projectURL":"",
+    "license":[
+        {
+            "type":"MIT",
+            "URL":"https://github.com/blackbucksoftware/easykonto-cfml/blob/main/LICENSE"
+        }
+    ],
+    "contributors":[
+        "faxi05"
+    ],
+    "dependencies":{},
+    "devDependencies":{
+        "testbox":"^5.3.0+5",
+        "coldbox":"^7.1.0+10"
+    },
+    "installPaths":{
+        "testbox":"testbox/",
+        "coldbox":"tests/resources/app/coldbox/"
+    },
+    "scripts":{
+        "format":"cfformat run tests/specs/**/*.cfc,ModuleConfig.cfc,easykonto.cfc --overwrite",
+        "format:check":"cfformat check tests/specs/**/*.cfc,ModuleConfig.cfc,easykonto.cfc"
+    },
+    "ignore":[
+        "**/.*",
+        "tests"
+    ],
+    "testbox":{
+        "runner":"http://127.0.0.1:45000/tests/runner.cfm",
+        "tests_root":""
+    }
+}
